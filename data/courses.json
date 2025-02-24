@@ -1,0 +1,54 @@
+[{
+    "courseName": "CP3010",
+    "courseTitle": "Serverside Programming",
+    "sessions": [
+        {
+            "day": 2,
+            "startTime": 830,
+            "duration": 100,
+            "room": "K102"
+        },
+        {
+            "day": 4,
+            "startTime": 830,
+            "duration": 150,
+            "room": "K102"
+        }
+    ]
+},
+{
+    "courseName": "CP3000",
+    "courseTitle": "Distributed Computing",
+    "sessions": [
+        {
+            "day": 3,
+            "startTime": 830,
+            "duration": 100,
+            "room": "K102"
+        },
+        {
+            "day": 5,
+            "startTime": 830,
+            "duration": 150,
+            "room": "K102"
+        }
+    ]
+},
+{
+    "courseName": "CP3015",
+    "courseTitle": "Java 3",
+    "sessions": [
+        {
+            "day": 2,
+            "startTime": 830,
+            "duration": 100,
+            "room": "K102"
+        },
+        {
+            "day": 4,
+            "startTime": 830,
+            "duration": 150,
+            "room": "K102"
+        }
+    ]
+}]

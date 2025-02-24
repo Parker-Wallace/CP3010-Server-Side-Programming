@@ -10,18 +10,35 @@ const registerStudent = async (req, res) => {
             return res.status(404).json({ error: "Student or course not found" });
         }
 
-        // Check for scheduling conflict
-        const enrolledCourses = await Course.find({ _id: { $in: student.registeredCourses } });
-        for (const enrolledCourse of enrolledCourses) {
-            if (enrolledCourse.timeSlot === course.timeSlot) {
-                return res.status(400).json({ error: "Scheduling conflict detected" });
-            }
+        // Ensure student.courseIds is an array
+        if (!Array.isArray(student.courseIds)) {
+            student.courseIds = [];
         }
 
-        // ✅ Push the course ID (as a string)
+        // Check for scheduling conflict
+        const enrolledCourses = await Course.find({ _id: { $in: student.registeredCourses } });
+        
+        for (const enrolledCourse of enrolledCourses) {
+            for (const enrolledSession of enrolledCourse.sessions) {
+                for (const newSession of course.sessions) {
+                    // Check for scheduling conflicts based on day and time
+                    if (enrolledSession.day === newSession.day) {
+                        // Check for time overlap
+                        const enrolledEndTime = enrolledSession.startTime + enrolledSession.duration;
+                        const newEndTime = newSession.startTime + newSession.duration;
+                        const isTimeConflict = (enrolledSession.startTime < newEndTime) && (newSession.startTime < enrolledEndTime);
+
+                        if (isTimeConflict) {
+                            return res.status(400).json({ error: "Scheduling conflict detected" });
+                        }
+                    }
+                }
+            }
+        }
         student.registeredCourses.push(course._id.toString());
         course.registeredStudents.push(student._id.toString());
         await student.save();
+        await course.save()
 
         res.json({ message: "Enrollment successful" });
     } catch (error) {

@@ -14,8 +14,9 @@ Gets all students from mongo
 
 `curl -# http://localhost:3000/api/students/id=67b49dd9f332bf27724db5c6 | python -m json.tool`
 
-`curl -# http://localhost:3000/api/register/sid=67b49dd9f332bf27724db5c6/cid=67923ad619dda76e0a8c9bd3 | python -m json.tool`
+`curl -X POST http://localhost:3000/api/register/67bcabf0444b7ee1e4f0bdf2/67bcabe3444b7ee1e4f0bdec`
 
-`curl -X POST http://localhost:3000/api/register/67b49dd9f332bf27724db5c6/67923ad619dda76e0a8c9bd3`
-
+67bcabe3444b7ee1e4f0bde6
+67bcabe3444b7ee1e4f0bde9
+67bcabe3444b7ee1e4f0bdec
 
