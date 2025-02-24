@@ -1,0 +1,22 @@
+{
+    "schoolId":193301234,
+    "firstName":"Jim-Bob",
+    "lastName":"Walton",
+    "DOB":"24/11/1924",
+    "addressUnit":"001",
+    "addressStreet":"Main St.",
+    "addressCity":"Walton's Mt.",
+    "addressStateProv":"VA",
+    "addressCountry":"USA",
+    "addressPostalCode":"24411",
+    "phoneNumber":"(434) 555 1212",
+    "email":"jbwalton@email.com",
+    "emergencyContact": [
+        {
+            "emergContactName":"John Walton Sr.",
+            "emergContactPhone":"(434) 555 1213",
+            "emergContactRelation":"Father"
+            }
+        ],
+    "program":"Carpentry"
+}

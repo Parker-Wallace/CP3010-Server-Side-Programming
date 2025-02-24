@@ -1,0 +1,18 @@
+{
+    "courseName": "CP3010",
+    "courseTitle": "Serverside Programming",
+    "sessions": [
+        {
+            "day": 2,
+            "startTime": 830,
+            "duration": 100,
+            "room": "K102"
+        },
+        {
+            "day": 4,
+            "startTime": 830,
+            "duration": 150,
+            "room": "K102"
+        }
+    ]
+}
