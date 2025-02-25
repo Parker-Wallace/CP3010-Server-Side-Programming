@@ -1,20 +1,5 @@
 const mongoose = require('mongoose')
 
-const EmergencyContactSubSchema = mongoose.Schema ({
-    emergContactName : {
-        type: String,
-        required: true
-    },
-    emergContactPhone : {
-        type: String,
-        required: true
-    },
-    emergContactRelation : {
-        type: String,
-        required: true
-    },
-})
-
 const StudentSchema = mongoose.Schema ({
     schoolId: {
         type: Number,
@@ -28,7 +13,7 @@ const StudentSchema = mongoose.Schema ({
         type: String,
         required: true
     },
-    DOB: {
+    dob: {
         type: String,
         required: true,
     },
@@ -52,11 +37,11 @@ const StudentSchema = mongoose.Schema ({
         type: String,
         required: true
     },
-    addressPostalCode: {
+    addressPostCode: {
         type: String,
         required: true
     },
-    phoneNumber: {
+    phone: {
         type: String,
         required: true,
     },
@@ -64,13 +49,28 @@ const StudentSchema = mongoose.Schema ({
         type: String,
         required: true,
     },
-    emergencyContact: [EmergencyContactSubSchema],
+    startDate: {
+        type: String,
+        required: true
+    },
     program: {
         type: String,
         required: true,
     },
     registeredCourses:{
         type:[String]
+    },
+    emergContactName : {
+        type: String,
+        required: true
+    },
+    emergContactPhone : {
+        type: String,
+        required: true
+    },
+    emergContactRel : {
+        type: String,
+        required: true
     }
 })
 

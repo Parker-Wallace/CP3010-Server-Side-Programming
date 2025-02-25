@@ -3,8 +3,10 @@ const Student = require("../models/student.model.js");
 
 const registerStudent = async (req, res) => {
     try {
-        const student = await Student.findById(req.params.sId);
-        const course = await Course.findById(req.params.cId);
+        const student = await Student.findOne(req.params.schoolId);
+        const course = await Course.findOne(req.params.courseName);
+        // console.log(student)
+        // console.log(course)
 
         if (!student || !course) {
             return res.status(404).json({ error: "Student or course not found" });
@@ -26,6 +28,7 @@ const registerStudent = async (req, res) => {
                         // Check for time overlap
                         const enrolledEndTime = enrolledSession.startTime + enrolledSession.duration;
                         const newEndTime = newSession.startTime + newSession.duration;
+                        console.log(enrolledEndTime + " " + newEndTime)
                         const isTimeConflict = (enrolledSession.startTime < newEndTime) && (newSession.startTime < enrolledEndTime);
 
                         if (isTimeConflict) {

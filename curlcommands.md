@@ -6,6 +6,8 @@ Adds a course to mongo from course.json
 
 `curl -# http://localhost:3000/api/courses -H "Content-Type: application/json" -d @./data/course.json`
 
+`curl -# http://localhost:3000/api/register -H "Content-Type: application/json" -d @./data/register.json
+
 Gets all students from mongo
 
 `curl -# http://localhost:3000/api/students | python -m json.tool`
