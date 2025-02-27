@@ -1,0 +1,15 @@
+{
+    "mission": "ICEFLIGHT20250102-ZONE3K",
+    "aircraft": "C-GCNA",
+    "latitude": 52.345,
+    "longitude": 54.321,
+    "altitude": 5000,
+    "timestamp": "2025/01/02 03:04:56 Z",
+    "bergId": "20250102-003",
+    "iceType": "Pinnacle",
+    "iceSize": 200,
+    "seaState": "Rough",
+    "seaTemp": -1.5,
+    "iceGrounded": false,
+    "comment": "Berg surrounded by several small growlers. Trawler in the area notified by radio of the berg. Acknowledged."
+}
